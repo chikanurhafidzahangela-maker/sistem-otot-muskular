@@ -1,0 +1,3182 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sistem Otot Manusia | Anatomi dan Fisiologi</title>
+
+<style>
+
+/* =========================================
+   WEBSITE SISTEM OTOT MANUSIA
+   DESAIN DIGITAL LEARNING MAGAZINE
+========================================= */
+
+
+/* ---------- WARNA ---------- */
+
+:root {
+
+    --cream: #F7F1E8;
+    --cream2: #EFE4D5;
+
+    --paper: #FFFDF9;
+
+    --sage: #AAB99F;
+    --sage-light: #DCE5D5;
+    --sage-dark: #52634F;
+
+    --peach: #EFCDBB;
+
+    --terracotta: #B96F52;
+    --terracotta-light: #E3B19C;
+
+    --brown: #493E37;
+    --soft-brown: #756B64;
+
+    --line: #E7D9CB;
+
+}
+
+
+/* ---------- RESET ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--paper);
+
+    color: var(--brown);
+
+    line-height: 1.9;
+
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 16px 7%;
+
+    background:
+        rgba(255,253,249,0.92);
+
+    backdrop-filter:
+        blur(12px);
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.logo {
+
+    cursor: pointer;
+
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: var(--sage-dark);
+
+}
+
+.logo span {
+
+    color: var(--terracotta);
+
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.nav-links button {
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    padding: 9px 13px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    color: var(--soft-brown);
+
+    transition: 0.3s;
+
+}
+
+.nav-links button:hover {
+
+    color: var(--terracotta);
+
+}
+
+
+/* =========================================
+   PAGE SYSTEM
+========================================= */
+
+.page {
+
+    display: none;
+
+    min-height: 100vh;
+
+}
+
+.page.active {
+
+    display: block;
+
+    animation:
+        appear 0.6s ease;
+
+}
+
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3 {
+
+    font-family:
+        Georgia,
+        serif;
+
+    color: var(--sage-dark);
+
+}
+
+h1 {
+
+    font-size:
+        clamp(55px, 8vw, 105px);
+
+    line-height: 1;
+
+    margin: 15px 0;
+
+}
+
+h2 {
+
+    font-size:
+        clamp(38px, 5vw, 62px);
+
+    line-height: 1.15;
+
+}
+
+h3 {
+
+    font-size: 25px;
+
+}
+
+
+.label {
+
+    color: var(--terracotta);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+.lead {
+
+    font-size: 17px;
+
+    color: var(--soft-brown);
+
+}
+
+
+/* =========================================
+   COVER
+========================================= */
+
+.hero {
+
+    min-height:
+        calc(100vh - 70px);
+
+    padding:
+        70px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+
+    radial-gradient(
+        circle at 10% 20%,
+        var(--peach),
+        transparent 25%
+    ),
+
+    radial-gradient(
+        circle at 90% 80%,
+        var(--sage-light),
+        transparent 30%
+    ),
+
+    var(--cream);
+
+}
+
+
+.hero-container {
+
+    max-width: 1200px;
+
+    width: 100%;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr 0.9fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+}
+
+
+/* ---------- DECORATION ---------- */
+
+.decoration {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+}
+
+.dot {
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: var(--terracotta);
+
+}
+
+.dot:nth-child(2) {
+
+    background: var(--sage);
+
+}
+
+.dot:nth-child(3) {
+
+    background: var(--peach);
+
+}
+
+
+/* =========================================
+   COVER IMAGE
+========================================= */
+
+.cover-image {
+
+    position: relative;
+
+}
+
+
+.cover-image img {
+
+    width: 100%;
+
+    min-height: 430px;
+
+    object-fit: contain;
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 40px;
+
+    box-shadow:
+        20px 25px 0
+        var(--terracotta-light),
+
+        0 25px 50px
+        rgba(60,40,25,0.12);
+
+}
+
+
+.floating-card {
+
+    position: absolute;
+
+    bottom: -20px;
+
+    left: -25px;
+
+    padding: 18px 22px;
+
+    background: var(--sage-dark);
+
+    color: white;
+
+    border-radius: 18px;
+
+    font-size: 13px;
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,0.15);
+
+}
+
+
+/* =========================================
+   GROUP CARD
+========================================= */
+
+.group-card {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.65);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.9);
+
+}
+
+
+.group-card h3 {
+
+    margin-top: 0;
+
+}
+
+
+.member {
+
+    padding: 10px 15px;
+
+    margin-top: 8px;
+
+    background: var(--cream);
+
+    border-radius: 12px;
+
+    border-left:
+        4px solid
+        var(--terracotta);
+
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn {
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 15px 27px;
+
+    border-radius: 40px;
+
+    font-family: inherit;
+
+    font-weight: bold;
+
+    margin-top: 20px;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-primary {
+
+    background: var(--terracotta);
+
+    color: white;
+
+}
+
+
+.btn-secondary {
+
+    background: var(--sage-light);
+
+    color: var(--sage-dark);
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(70,40,20,0.15);
+
+}
+
+
+/* =========================================
+   GENERAL SECTION
+========================================= */
+
+section {
+
+    padding: 90px 7%;
+
+}
+
+
+.container {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+}
+
+
+.alt {
+
+    background: var(--cream);
+
+}
+
+
+.content {
+
+    font-size: 16px;
+
+}
+
+
+.content p {
+
+    text-align: justify;
+
+    margin-bottom: 22px;
+
+}
+
+
+/* =========================================
+   INTRO BOX
+========================================= */
+
+.intro-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+}
+
+
+.highlight-box {
+
+    padding: 30px;
+
+    background: var(--sage-light);
+
+    border-radius: 30px;
+
+}
+
+
+.highlight-box p {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================
+   DAFTAR PEMBAHASAN
+========================================= */
+
+.topic-list {
+
+    margin-top: 50px;
+
+    display: grid;
+
+    gap: 14px;
+
+}
+
+
+.topic-item {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        80px 1fr auto;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 25px 30px;
+
+    border: none;
+
+    background: white;
+
+    border-radius: 22px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-family: inherit;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 20px
+        rgba(70,50,30,0.05);
+
+}
+
+
+.topic-item:hover {
+
+    transform:
+        translateX(10px);
+
+    background:
+        var(--sage-light);
+
+}
+
+
+.topic-no {
+
+    font-family: Georgia, serif;
+
+    font-size: 38px;
+
+    color: var(--terracotta);
+
+    font-weight: bold;
+
+}
+
+
+.topic-title {
+
+    font-family: Georgia, serif;
+
+    color: var(--sage-dark);
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+
+.arrow {
+
+    font-size: 25px;
+
+    color: var(--terracotta);
+
+}
+
+
+/* =========================================
+   MATERI HEADER
+========================================= */
+
+.material-hero {
+
+    padding:
+        80px 7% 50px;
+
+    background:
+
+    radial-gradient(
+        circle at 85% 20%,
+        var(--sage-light),
+        transparent 25%
+    ),
+
+    var(--cream);
+
+}
+
+
+.material-inner {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+}
+
+
+.material-number {
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(70px,10vw,130px);
+
+    color:
+        var(--terracotta-light);
+
+    font-weight: bold;
+
+    line-height: 0.8;
+
+}
+
+
+/* =========================================
+   MATERIAL CONTENT
+========================================= */
+
+.material-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 0.85fr;
+
+    gap: 55px;
+
+    align-items: start;
+
+}
+
+
+.image-box {
+
+    position: sticky;
+
+    top: 100px;
+
+}
+
+
+.image-box img {
+
+    width: 100%;
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 40px
+        rgba(70,50,30,0.10);
+
+}
+
+
+.caption {
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: var(--soft-brown);
+
+    margin-top: 12px;
+
+}
+
+
+/* =========================================
+   INFO NOTE
+========================================= */
+
+.note {
+
+    margin: 35px 0;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: var(--sage-light);
+
+}
+
+
+.note h3 {
+
+    margin-top: 0;
+
+}
+
+
+/* =========================================
+   NEXT MATERIAL CARD
+========================================= */
+
+.next-section {
+
+    margin-top: 80px;
+
+    padding-top: 50px;
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+.next-card {
+
+    display: grid;
+
+    grid-template-columns:
+        120px 1fr auto;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 35px;
+
+    border-radius: 30px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--sage-dark),
+        #71806D
+    );
+
+    color: white;
+
+}
+
+
+.next-card .next-number {
+
+    font-family: Georgia, serif;
+
+    font-size: 60px;
+
+    color: var(--peach);
+
+}
+
+
+.next-card h3 {
+
+    color: white;
+
+    margin: 0;
+
+}
+
+
+.next-card p {
+
+    margin: 5px 0 0;
+
+    color:
+        rgba(255,255,255,0.8);
+
+}
+
+
+.next-card button {
+
+    border: none;
+
+    padding: 14px 20px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    background: var(--peach);
+
+    color: var(--brown);
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================
+   BOTTOM NAVIGATION
+========================================= */
+
+.bottom-nav {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 45px;
+
+}
+
+
+.bottom-nav button {
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    font-family: inherit;
+
+    font-weight: bold;
+
+}
+
+
+.back {
+
+    background: var(--cream2);
+
+    color: var(--brown);
+
+}
+
+
+.menu {
+
+    background: var(--sage-light);
+
+    color: var(--sage-dark);
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    padding: 35px;
+
+    background: var(--sage-dark);
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width: 850px) {
+
+    .hero-container,
+    .intro-grid,
+    .material-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .image-box {
+
+        position: relative;
+
+        top: auto;
+
+    }
+
+
+    .topic-item {
+
+        grid-template-columns:
+            60px 1fr auto;
+
+        padding: 20px;
+
+    }
+
+
+    .next-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media(max-width: 600px) {
+
+    nav {
+
+        padding: 14px 5%;
+
+    }
+
+
+    .nav-links button {
+
+        font-size: 10px;
+
+        padding: 7px;
+
+    }
+
+
+    section {
+
+        padding: 65px 6%;
+
+    }
+
+
+    .hero {
+
+        padding: 50px 6%;
+
+    }
+
+
+    .material-hero {
+
+        padding: 60px 6% 35px;
+
+    }
+
+
+    .floating-card {
+
+        position: relative;
+
+        left: auto;
+
+        bottom: auto;
+
+        margin-top: 15px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     NAVIGATION
+===================================== -->
+
+<nav>
+
+<div class="logo"
+onclick="showPage('cover')">
+
+MUSKULAR<span>.</span>
+
+</div>
+
+
+<div class="nav-links">
+
+<button onclick="showPage('bab1')">
+BAB I
+</button>
+
+<button onclick="showPage('daftar')">
+MATERI
+</button>
+
+<button onclick="showPage('bab3')">
+BAB III
+</button>
+
+</div>
+
+</nav>
+
+
+
+<!-- =====================================
+     COVER
+===================================== -->
+
+<div id="cover" class="page active">
+
+<header class="hero">
+
+<div class="hero-container">
+
+
+<div>
+
+<div class="decoration">
+
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+
+</div>
+
+
+<p class="label">
+
+ANATOMI & FISIOLOGI MANUSIA
+
+</p>
+
+
+<h1>
+
+Sistem<br>
+<em>Otot</em>
+
+</h1>
+
+
+<p class="lead">
+
+Menjelajahi struktur, mekanisme kerja,
+dan fungsi sistem muskular manusia melalui
+pembahasan anatomi dan fisiologi secara bertahap.
+
+</p>
+
+
+<div class="group-card">
+
+<h3>Kelompok 12</h3>
+
+<div class="member">
+01 — Muhamad Ridlo Haikal
+</div>
+
+<div class="member">
+02 — Chika Nurhafidzah Angela
+</div>
+
+<div class="member">
+03 — Syapiq Ilham
+</div>
+
+<div class="member">
+04 — Ghaly Fayi Al Hazmi
+</div>
+
+<br>
+
+<b>Dosen Pengampu</b>
+
+<br>
+
+Dr. Dani Ramdani, S.Pd., M.Pd.
+
+</div>
+
+
+<button
+class="btn btn-primary"
+onclick="showPage('bab1')">
+
+MULAI BELAJAR →
+
+</button>
+
+</div>
+
+
+
+<div class="cover-image">
+
+<img
+src="images/cover-otot.png"
+alt="Sistem Otot Manusia">
+
+
+<div class="floating-card">
+
+✦ Pelajari sistem muskular<br>
+secara bertahap dan interaktif
+
+</div>
+
+</div>
+
+
+</div>
+
+</header>
+
+
+<footer>
+
+SISTEM OTOT MANUSIA • KELOMPOK 12
+
+</footer>
+
+</div>
+
+
+
+<!-- =====================================
+     BAB I
+===================================== -->
+
+<div id="bab1" class="page">
+
+<section>
+
+<div class="container">
+
+<p class="label">
+
+BAB I — PENDAHULUAN
+
+</p>
+
+
+<h2>
+
+Sistem Muskular dalam
+Tubuh Manusia
+
+</h2>
+
+
+<div class="intro-grid">
+
+<div class="content">
+
+<p>
+
+Sistem otot atau sistem muskular merupakan salah satu
+sistem penting dalam tubuh manusia yang berperan dalam
+menghasilkan berbagai bentuk gerakan. Aktivitas yang
+dilakukan manusia dalam kehidupan sehari-hari, baik
+gerakan sederhana maupun gerakan yang membutuhkan
+koordinasi lebih kompleks, melibatkan kerja jaringan
+otot.
+
+</p>
+
+<p>
+
+Kerja sistem muskular tidak berlangsung secara
+terpisah dari sistem tubuh lainnya. Sistem saraf
+berperan dalam memberikan dan mengatur rangsangan,
+sedangkan sistem rangka menjadi bagian penting dalam
+mendukung terjadinya gerakan. Selain itu, aktivitas
+otot juga membutuhkan energi agar proses fisiologis
+yang berhubungan dengan kontraksi dan relaksasi dapat
+berlangsung.
+
+</p>
+
+<p>
+
+Untuk memahami sistem muskular secara menyeluruh,
+pembahasan tidak cukup dilakukan hanya pada bentuk otot
+yang terlihat dari luar. Struktur otot perlu dipahami
+mulai dari organisasi makroskopis hingga struktur yang
+lebih kecil seperti serat otot, miofibril, dan sarkomer.
+
+</p>
+
+<p>
+
+Website pembelajaran ini menyajikan pembahasan sistem
+otot secara bertahap. Setiap topik dapat dipilih
+langsung melalui daftar pembahasan atau dipelajari
+secara berurutan menggunakan fitur pembahasan
+selanjutnya.
+
+</p>
+
+</div>
+
+
+<div class="highlight-box">
+
+<h3>
+
+✦ Apa yang akan dipelajari?
+
+</h3>
+
+<p>
+
+Pembahasan mencakup organisasi anatomi otot,
+struktur mikroskopis, struktur molekuler sarkomer,
+tautan neuromuskular, mekanisme kontraksi dan
+relaksasi, sumber energi, respons otot, hingga
+berbagai kelainan pada sistem muskular.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="bottom-nav">
+
+<button
+class="back"
+onclick="showPage('cover')">
+
+← COVER
+
+</button>
+
+
+<button
+class="menu"
+onclick="showPage('daftar')">
+
+LIHAT PEMBAHASAN →
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================
+     DAFTAR MATERI
+===================================== -->
+
+<div id="daftar" class="page">
+
+<section class="alt">
+
+<div class="container">
+
+<p class="label">
+
+BAB II — PEMBAHASAN
+
+</p>
+
+
+<h2>
+
+Peta Pembelajaran
+
+</h2>
+
+
+<p class="lead">
+
+Pilih topik yang ingin kamu pelajari atau ikuti
+pembahasan secara berurutan dari materi pertama.
+
+</p>
+
+
+<div class="topic-list">
+
+
+<button class="topic-item"
+onclick="showPage('materi1')">
+
+<div class="topic-no">01</div>
+
+<div>
+
+<div class="topic-title">
+Anatomi Makroskopis Otot
+</div>
+
+<div>
+Organisasi otot dan lapisan jaringan ikat.
+</div>
+
+</div>
+
+<div class="arrow">→</div>
+
+</button>
+
+
+
+<button class="topic-item"
+onclick="showPage('materi2')">
+
+<div class="topic-no">02</div>
+
+<div>
+
+<div class="topic-title">
+Struktur Mikroskopis Otot
+</div>
+
+<div>
+Mengenal serat otot dan komponen penyusunnya.
+</div>
+
+</div>
+
+<div class="arrow">→</div>
+
+</button>
+
+
+
+<button class="topic-item"
+onclick="showPage('materi3')">
+
+<div class="topic-no">03</div>
+
+<div>
+
+<div class="topic-title">
+Struktur Molekuler Sarkomer
+</div>
+
+<div>
+Unit fungsional yang berperan dalam kontraksi.
+</div>
+
+</div>
+
+<div class="arrow">→</div>
+
+</button>
+
+
+
+<button class="topic-item"
+onclick="showPage('materi4')">
+
+<div class="topic-no">04</div>
+
+<div>
+
+<div class="topic-title">
+Tautan Neuromuskular
+</div>
+
+<div>
+Komunikasi antara neuron motorik dan otot.
+</div>
+
+</div>
+
+<div class="arrow">→</div>
+
+</button>
+
+
+
+<button class="topic-item"
+onclick="showPage('materi5')">
+
+<div class="topic-no">05</div>
+
+<div>
+
+<div class="topic-title">
+Mekanisme Kontraksi Otot
+</div>
+
+<div>
+Proses kerja filamen dalam menghasilkan kontraksi.
+</div>
+
+</div>
+
+<div class="arrow">→</div>
+
+</button>
+
+
+
+<button class="topic-item"
+onclick="showPage('materi6')">
+
+<div class="topic-no">06</div>
+
+<div>
+
+<div class="topic-title">
+Relaksasi Otot
+</div>
+
+<div>
+Peran kalsium dan mekanisme SERCA.
+</div>
+
+</div>
+
+<div class="arrow">→</div>
+
+</button>
+
+
+
+<button class="topic-item"
+onclick="showPage('materi7')">
+
+<div class="topic-no">07</div>
+
+<div>
+
+<div class="topic-title">
+Sumber Energi Otot
+</div>
+
+<div>
+Sistem energi dan pembentukan ATP.
+</div>
+
+</div>
+
+<div class="arrow">→</div>
+
+</button>
+
+
+
+<button class="topic-item"
+onclick="showPage('materi8')">
+
+<div class="topic-no">08</div>
+
+<div>
+
+<div class="topic-title">
+Respons Otot
+</div>
+
+<div>
+Unit motorik, twitch, sumasi, dan tetanus.
+</div>
+
+</div>
+
+<div class="arrow">→</div>
+
+</button>
+
+
+
+<button class="topic-item"
+onclick="showPage('materi9')">
+
+<div class="topic-no">09</div>
+
+<div>
+
+<div class="topic-title">
+Kelainan Sistem Otot
+</div>
+
+<div>
+Berbagai gangguan yang memengaruhi fungsi muskular.
+</div>
+
+</div>
+
+<div class="arrow">→</div>
+
+</button>
+
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================
+     MATERI 1
+===================================== -->
+
+<div id="materi1" class="page">
+
+<div class="material-hero">
+
+<div class="material-inner">
+
+<div class="material-number">
+
+01
+
+</div>
+
+<p class="label">
+
+BAB II — PEMBAHASAN
+
+</p>
+
+<h2>
+
+Anatomi Makroskopis Otot
+
+</h2>
+
+<p class="lead">
+
+Memahami organisasi otot dari struktur terbesar
+hingga bagian-bagian penyusunnya.
+
+</p>
+
+</div>
+
+</div>
+
+
+<section>
+
+<div class="container">
+
+<div class="material-layout">
+
+
+<div class="content">
+
+<p>
+
+Secara anatomi makroskopis, otot rangka memiliki
+organisasi yang tersusun secara bertingkat. Struktur
+otot tidak hanya terdiri atas satu jaringan tunggal,
+melainkan tersusun dari berbagai bagian yang bekerja
+secara terorganisasi untuk menghasilkan fungsi
+mekanis.
+
+</p>
+
+<p>
+
+Keseluruhan otot dibungkus oleh lapisan jaringan ikat
+yang disebut epimisium. Di dalam otot terdapat
+kelompok-kelompok serat yang membentuk fasikel.
+Setiap fasikel kemudian dibungkus oleh perimisium,
+sedangkan setiap serat otot dilindungi oleh endomisium.
+
+</p>
+
+<p>
+
+Keberadaan lapisan jaringan ikat tersebut sangat
+penting dalam mempertahankan organisasi struktur
+otot. Selain memberikan dukungan struktural, jaringan
+ikat juga berkaitan dengan keberadaan saraf dan
+pembuluh darah yang membantu mendukung aktivitas
+jaringan otot.
+
+</p>
+
+<p>
+
+Ketika otot menghasilkan gaya melalui proses
+kontraksi, gaya tersebut dapat diteruskan melalui
+struktur jaringan ikat menuju tendon. Tendon kemudian
+menghubungkan otot dengan tulang sehingga aktivitas
+kontraksi dapat menghasilkan gerakan.
+
+</p>
+
+
+<div class="note">
+
+<h3>✦ Inti Pembahasan</h3>
+
+<p>
+
+Organisasi bertingkat pada otot memungkinkan banyak
+serat bekerja secara terkoordinasi. Struktur tersebut
+membantu tubuh menghasilkan gerakan dengan cara yang
+teratur dan terintegrasi.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="image-box">
+
+<img
+src="images/gambar-2-1-jaringan-ikat.png"
+alt="Tiga Lapisan Jaringan Ikat">
+
+<p class="caption">
+
+Gambar 2.1 — Tiga Lapisan Jaringan Ikat
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="next-section">
+
+<p class="label">
+
+PEMBAHASAN SELANJUTNYA
+
+</p>
+
+
+<div class="next-card">
+
+<div class="next-number">
+
+02
+
+</div>
+
+
+<div>
+
+<h3>
+
+Struktur Mikroskopis Otot
+
+</h3>
+
+<p>
+
+Pelajari bagaimana struktur otot tersusun hingga
+tingkat serat dan komponen mikroskopisnya.
+
+</p>
+
+</div>
+
+
+<button onclick="showPage('materi2')">
+
+LANJUTKAN →
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="bottom-nav">
+
+<button
+class="back"
+onclick="showPage('daftar')">
+
+← DAFTAR MATERI
+
+</button>
+
+<button
+class="menu"
+onclick="showPage('materi2')">
+
+MATERI SELANJUTNYA →
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================
+     MATERI 2
+===================================== -->
+
+<div id="materi2" class="page">
+
+<div class="material-hero">
+
+<div class="material-inner">
+
+<div class="material-number">02</div>
+
+<p class="label">
+BAB II — PEMBAHASAN
+</p>
+
+<h2>
+Struktur Mikroskopis Otot
+</h2>
+
+<p class="lead">
+Mempelajari struktur otot pada tingkat sel dan serat.
+</p>
+
+</div>
+
+</div>
+
+
+<section>
+
+<div class="container">
+
+<div class="material-layout">
+
+<div class="content">
+
+<p>
+
+Pada tingkat mikroskopis, jaringan otot tersusun atas
+serat-serat otot yang memiliki struktur khusus untuk
+mendukung fungsi kontraktil. Serat otot merupakan
+bagian penting dalam organisasi jaringan muskular dan
+memiliki berbagai komponen yang bekerja secara
+terintegrasi.
+
+</p>
+
+<p>
+
+Struktur serat otot mencakup membran sel yang disebut
+sarkolema serta bagian internal sel yang dikenal
+sebagai sarkoplasma. Di dalam serat otot terdapat
+miofibril yang tersusun memanjang dan berperan penting
+dalam proses kontraksi.
+
+</p>
+
+<p>
+
+Miofibril tersusun atas unit-unit berulang yang
+memiliki hubungan langsung dengan mekanisme kerja
+otot. Organisasi yang teratur tersebut memungkinkan
+gaya yang dihasilkan pada tingkat kecil dapat
+berkontribusi terhadap aktivitas keseluruhan otot.
+
+</p>
+
+<p>
+
+Dengan memahami struktur mikroskopis, dapat dilihat
+bahwa gerakan tubuh yang tampak sederhana sebenarnya
+berasal dari proses yang berlangsung secara teratur
+hingga tingkat seluler.
+
+</p>
+
+</div>
+
+
+<div class="image-box">
+
+<img
+src="images/gambar-2-2-serat-otot.png"
+alt="Serat Otot">
+
+<p class="caption">
+
+Gambar 2.2 — Struktur Serat Otot
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="next-section">
+
+<p class="label">
+PEMBAHASAN SELANJUTNYA
+</p>
+
+<div class="next-card">
+
+<div class="next-number">03</div>
+
+<div>
+
+<h3>
+Struktur Molekuler Sarkomer
+</h3>
+
+<p>
+Mengenal unit fungsional yang menjadi dasar
+mekanisme kontraksi otot.
+</p>
+
+</div>
+
+<button onclick="showPage('materi3')">
+LANJUTKAN →
+</button>
+
+</div>
+
+</div>
+
+
+<div class="bottom-nav">
+
+<button class="back"
+onclick="showPage('materi1')">
+
+← SEBELUMNYA
+
+</button>
+
+<button class="menu"
+onclick="showPage('daftar')">
+
+☰ DAFTAR MATERI
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================
+     MATERI 3
+===================================== -->
+
+<div id="materi3" class="page">
+
+<div class="material-hero">
+
+<div class="material-inner">
+
+<div class="material-number">03</div>
+
+<p class="label">
+BAB II — PEMBAHASAN
+</p>
+
+<h2>
+Struktur Molekuler Sarkomer
+</h2>
+
+<p class="lead">
+Unit struktural dan fungsional penting dalam otot.
+</p>
+
+</div>
+
+</div>
+
+
+<section>
+
+<div class="container">
+
+<div class="material-layout">
+
+<div class="content">
+
+<p>
+
+Sarkomer merupakan unit struktural dan fungsional yang
+tersusun secara berulang sepanjang miofibril. Struktur
+ini memiliki peranan yang sangat penting dalam proses
+kontraksi karena perubahan yang terjadi pada sarkomer
+berhubungan langsung dengan perubahan panjang serat
+otot.
+
+</p>
+
+<p>
+
+Di dalam sarkomer terdapat komponen filamen yang
+tersusun secara teratur. Interaksi antara filamen
+tersebut menjadi dasar dalam menjelaskan bagaimana
+otot mampu menghasilkan gaya.
+
+</p>
+
+<p>
+
+Ketika proses kontraksi berlangsung, filamen-filamen
+mengalami perubahan posisi relatif. Mekanisme tersebut
+sering dijelaskan melalui konsep sliding filament,
+yaitu pergeseran antarfilamen yang menyebabkan
+perubahan panjang pada sarkomer.
+
+</p>
+
+<p>
+
+Karena sarkomer tersusun berulang dalam jumlah yang
+sangat banyak, perubahan yang terjadi pada setiap unit
+secara bersama-sama dapat menghasilkan perubahan pada
+miofibril, serat otot, dan akhirnya keseluruhan otot.
+
+</p>
+
+</div>
+
+
+<div class="image-box">
+
+<img
+src="images/gambar-2-3-sarkomer.png"
+alt="Struktur Sarkomer">
+
+<p class="caption">
+
+Gambar — Struktur Molekuler Sarkomer
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="next-section">
+
+<p class="label">
+PEMBAHASAN SELANJUTNYA
+</p>
+
+<div class="next-card">
+
+<div class="next-number">04</div>
+
+<div>
+
+<h3>
+Tautan Neuromuskular
+</h3>
+
+<p>
+Memahami bagaimana sistem saraf berkomunikasi
+dengan jaringan otot.
+</p>
+
+</div>
+
+<button onclick="showPage('materi4')">
+LANJUTKAN →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================
+     MATERI 4
+===================================== -->
+
+<div id="materi4" class="page">
+
+<div class="material-hero">
+
+<div class="material-inner">
+
+<div class="material-number">04</div>
+
+<p class="label">
+BAB II — PEMBAHASAN
+</p>
+
+<h2>
+Tautan Neuromuskular
+</h2>
+
+</div>
+
+</div>
+
+
+<section>
+
+<div class="container">
+
+<div class="material-layout">
+
+<div class="content">
+
+<p>
+
+Tautan neuromuskular merupakan daerah khusus yang
+berhubungan dengan komunikasi antara neuron motorik
+dan serat otot. Hubungan tersebut sangat penting
+karena otot rangka memerlukan rangsangan dari sistem
+saraf untuk memulai aktivitas kontraktil.
+
+</p>
+
+<p>
+
+Ketika sinyal dari neuron motorik mencapai daerah
+pertemuan dengan serat otot, terjadi proses komunikasi
+yang memengaruhi membran sel otot. Respons tersebut
+kemudian menjadi bagian awal dari rangkaian proses
+yang dapat menghasilkan kontraksi.
+
+</p>
+
+<p>
+
+Keberadaan tautan neuromuskular menunjukkan bahwa
+gerakan tubuh merupakan hasil kerja sama antara sistem
+saraf dan sistem muskular. Sinyal saraf memberikan
+rangsangan, sedangkan jaringan otot menghasilkan
+respons mekanis.
+
+</p>
+
+<p>
+
+Apabila komunikasi pada tautan neuromuskular
+mengalami gangguan, kemampuan otot untuk memberikan
+respons normal dapat ikut terpengaruh.
+
+</p>
+
+</div>
+
+
+<div class="image-box">
+
+<img
+src="images/gambar-2-4-neuromuskular.png"
+alt="Tautan Neuromuskular">
+
+<p class="caption">
+
+Gambar — Tautan Neuromuskular
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="next-section">
+
+<p class="label">
+PEMBAHASAN SELANJUTNYA
+</p>
+
+<div class="next-card">
+
+<div class="next-number">05</div>
+
+<div>
+
+<h3>
+Mekanisme Kontraksi Otot
+</h3>
+
+<p>
+Melanjutkan pembahasan menuju proses kerja
+otot dalam menghasilkan gaya.
+</p>
+
+</div>
+
+<button onclick="showPage('materi5')">
+LANJUTKAN →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================
+     MATERI 5
+===================================== -->
+
+<div id="materi5" class="page">
+
+<div class="material-hero">
+
+<div class="material-inner">
+
+<div class="material-number">05</div>
+
+<p class="label">
+BAB II — PEMBAHASAN
+</p>
+
+<h2>
+Mekanisme Kontraksi Otot
+</h2>
+
+</div>
+
+</div>
+
+
+<section>
+
+<div class="container">
+
+<div class="material-layout">
+
+<div class="content">
+
+<p>
+
+Kontraksi otot merupakan proses fisiologis yang
+terjadi melalui serangkaian tahapan yang terorganisasi.
+Proses ini dimulai dari adanya rangsangan dan
+dilanjutkan dengan berbagai perubahan yang terjadi di
+dalam serat otot.
+
+</p>
+
+<p>
+
+Salah satu konsep utama dalam memahami kontraksi adalah
+mekanisme sliding filament. Konsep ini menjelaskan
+bahwa perubahan panjang pada otot berhubungan dengan
+pergeseran relatif antara filamen yang terdapat dalam
+sarkomer.
+
+</p>
+
+<p>
+
+Komponen kontraktil di dalam serat otot bekerja secara
+terkoordinasi untuk menghasilkan gaya. Interaksi yang
+terjadi memungkinkan terjadinya perubahan mekanis yang
+pada akhirnya menghasilkan kontraksi.
+
+</p>
+
+<p>
+
+Proses kontraksi juga berkaitan dengan keberadaan
+kalsium dan energi. Keduanya memiliki peranan penting
+dalam mendukung aktivitas fisiologis yang diperlukan
+oleh jaringan otot.
+
+</p>
+
+</div>
+
+
+<div class="image-box">
+
+<img
+src="images/gambar-2-5-kontraksi.png"
+alt="Mekanisme Kontraksi">
+
+<p class="caption">
+
+Gambar — Mekanisme Kontraksi Otot
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="next-section">
+
+<p class="label">
+PEMBAHASAN SELANJUTNYA
+</p>
+
+<div class="next-card">
+
+<div class="next-number">06</div>
+
+<div>
+
+<h3>
+Relaksasi Otot
+</h3>
+
+<p>
+Setelah kontraksi, bagaimana otot kembali
+ke keadaan relaksasi?
+</p>
+
+</div>
+
+<button onclick="showPage('materi6')">
+LANJUTKAN →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================
+     MATERI 6
+===================================== -->
+
+<div id="materi6" class="page">
+
+<div class="material-hero">
+
+<div class="material-inner">
+
+<div class="material-number">06</div>
+
+<p class="label">
+BAB II — PEMBAHASAN
+</p>
+
+<h2>
+Relaksasi Otot
+</h2>
+
+</div>
+
+</div>
+
+
+<section>
+
+<div class="container">
+
+<div class="material-layout">
+
+<div class="content">
+
+<p>
+
+Setelah mengalami kontraksi, otot perlu kembali menuju
+keadaan relaksasi. Proses ini merupakan bagian penting
+dalam fisiologi muskular karena memungkinkan jaringan
+otot untuk kembali siap melakukan aktivitas berikutnya.
+
+</p>
+
+<p>
+
+Pengaturan ion kalsium memiliki hubungan yang penting
+dengan proses relaksasi. Perubahan konsentrasi kalsium
+di dalam sel membantu mengatur keadaan kontraktil
+pada jaringan otot.
+
+</p>
+
+<p>
+
+SERCA berperan dalam mekanisme pengaturan kalsium
+yang berhubungan dengan proses relaksasi. Aktivitas
+tersebut menunjukkan bahwa relaksasi bukan sekadar
+berhentinya kontraksi, tetapi merupakan proses
+fisiologis yang berlangsung secara aktif.
+
+</p>
+
+<p>
+
+Pengaturan yang baik terhadap proses internal sel
+memungkinkan otot melakukan siklus kontraksi dan
+relaksasi secara berulang sesuai dengan kebutuhan
+aktivitas tubuh.
+
+</p>
+
+</div>
+
+
+<div class="image-box">
+
+<img
+src="images/gambar-2-6-serca.png"
+alt="Relaksasi Otot dan SERCA">
+
+<p class="caption">
+
+Gambar — Mekanisme Relaksasi dan SERCA
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="next-section">
+
+<p class="label">
+PEMBAHASAN SELANJUTNYA
+</p>
+
+<div class="next-card">
+
+<div class="next-number">07</div>
+
+<div>
+
+<h3>
+Sumber Energi Otot
+</h3>
+
+<p>
+Pelajari dari mana otot memperoleh energi
+untuk melakukan aktivitas.
+</p>
+
+</div>
+
+<button onclick="showPage('materi7')">
+LANJUTKAN →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================
+     MATERI 7
+===================================== -->
+
+<div id="materi7" class="page">
+
+<div class="material-hero">
+
+<div class="material-inner">
+
+<div class="material-number">07</div>
+
+<p class="label">
+BAB II — PEMBAHASAN
+</p>
+
+<h2>
+Sumber Energi Otot
+</h2>
+
+</div>
+
+</div>
+
+
+<section>
+
+<div class="container">
+
+<div class="material-layout">
+
+<div class="content">
+
+<p>
+
+Aktivitas otot membutuhkan energi untuk mendukung
+berbagai proses fisiologis yang terjadi selama
+kontraksi maupun relaksasi. ATP merupakan sumber
+energi langsung yang digunakan dalam aktivitas sel
+otot.
+
+</p>
+
+<p>
+
+Ketersediaan ATP perlu didukung oleh beberapa sistem
+penyediaan energi. Sistem tersebut dapat memberikan
+kontribusi yang berbeda sesuai dengan kebutuhan dan
+karakteristik aktivitas yang dilakukan.
+
+</p>
+
+<p>
+
+Tiga sistem energi yang dibahas meliputi sistem
+fosfagen atau ATP-PC, sistem glikolisis anaerobik,
+dan sistem respirasi aerobik. Masing-masing memiliki
+peranan dalam membantu memenuhi kebutuhan energi.
+
+</p>
+
+<p>
+
+Selain itu, pembentukan ATP berkaitan dengan berbagai
+jalur metabolisme yang melibatkan penggunaan
+substrat energi. Proses tersebut menunjukkan hubungan
+erat antara aktivitas otot dan metabolisme energi
+dalam tubuh.
+
+</p>
+
+</div>
+
+
+<div>
+
+<div class="image-box">
+
+<img
+src="images/gambar-2-7-1-sistem-energi.png"
+alt="Tiga Sistem Energi">
+
+<p class="caption">
+
+Gambar 2.7.1 — Tiga Sistem Energi
+
+</p>
+
+</div>
+
+
+<br><br>
+
+
+<div class="image-box">
+
+<img
+src="images/gambar-2-7-2-metabolisme-atp.png"
+alt="Metabolisme ATP">
+
+<p class="caption">
+
+Gambar 2.7.2 — Jalur Metabolisme Pembentukan ATP
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="next-section">
+
+<p class="label">
+PEMBAHASAN SELANJUTNYA
+</p>
+
+<div class="next-card">
+
+<div class="next-number">08</div>
+
+<div>
+
+<h3>
+Respons Otot
+</h3>
+
+<p>
+Mengenal unit motorik, kedutan, sumasi,
+dan tetanus.
+</p>
+
+</div>
+
+<button onclick="showPage('materi8')">
+LANJUTKAN →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================
+     MATERI 8
+===================================== -->
+
+<div id="materi8" class="page">
+
+<div class="material-hero">
+
+<div class="material-inner">
+
+<div class="material-number">08</div>
+
+<p class="label">
+BAB II — PEMBAHASAN
+</p>
+
+<h2>
+Respons Otot
+</h2>
+
+</div>
+
+</div>
+
+
+<section>
+
+<div class="container">
+
+<div class="material-layout">
+
+<div class="content">
+
+<p>
+
+Otot dapat memberikan berbagai bentuk respons terhadap
+rangsangan yang diterima. Respons tersebut dapat
+dipengaruhi oleh pola dan frekuensi stimulasi yang
+terjadi pada jaringan otot.
+
+</p>
+
+<p>
+
+Unit motorik menjadi bagian penting dalam memahami
+bagaimana sistem saraf mengatur aktivitas otot.
+Aktivasi unit motorik memungkinkan kelompok serat otot
+memberikan respons terhadap rangsangan.
+
+</p>
+
+<p>
+
+Salah satu bentuk respons dasar adalah muscle twitch
+atau kedutan otot. Apabila pola rangsangan berubah,
+respons yang dihasilkan juga dapat mengalami perubahan.
+
+</p>
+
+<p>
+
+Sumasi dapat terjadi ketika efek dari kontraksi
+meningkat akibat pola stimulasi tertentu. Sementara
+itu, stimulasi dengan frekuensi yang lebih tinggi
+dapat menghasilkan kontraksi yang semakin
+berkelanjutan hingga membentuk kondisi tetanus.
+
+</p>
+
+</div>
+
+
+<div>
+
+<div class="image-box">
+
+<img
+src="images/gambar-2-8-1-unit-motorik.png"
+alt="Unit Motorik">
+
+<p class="caption">
+
+Gambar 2.8.1 — Unit Motorik
+
+</p>
+
+</div>
+
+
+<br><br>
+
+
+<div class="image-box">
+
+<img
+src="images/gambar-2-8-2-twitch-tetanus.png"
+alt="Twitch Sumasi Tetanus">
+
+<p class="caption">
+
+Gambar 2.8.2 — Muscle Twitch, Sumasi, dan Tetanus
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="next-section">
+
+<p class="label">
+PEMBAHASAN SELANJUTNYA
+</p>
+
+<div class="next-card">
+
+<div class="next-number">09</div>
+
+<div>
+
+<h3>
+Kelainan Sistem Otot
+</h3>
+
+<p>
+Pelajari beberapa gangguan yang dapat
+memengaruhi fungsi sistem muskular.
+</p>
+
+</div>
+
+<button onclick="showPage('materi9')">
+LANJUTKAN →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================
+     MATERI 9
+===================================== -->
+
+<div id="materi9" class="page">
+
+<div class="material-hero">
+
+<div class="material-inner">
+
+<div class="material-number">09</div>
+
+<p class="label">
+BAB II — PEMBAHASAN
+</p>
+
+<h2>
+Kelainan Sistem Otot
+</h2>
+
+<p class="lead">
+Memahami beberapa gangguan yang dapat memengaruhi
+struktur dan fungsi jaringan muskular.
+</p>
+
+</div>
+
+</div>
+
+
+<section>
+
+<div class="container">
+
+<div class="material-layout">
+
+<div class="content">
+
+<p>
+
+Kelainan pada sistem otot menunjukkan bahwa fungsi
+muskular bergantung pada berbagai struktur dan proses
+fisiologis yang bekerja secara terintegrasi. Gangguan
+pada salah satu bagian dapat memberikan pengaruh
+terhadap kemampuan otot dalam menjalankan fungsinya.
+
+</p>
+
+<p>
+
+Salah satu kelainan yang dibahas adalah Distrofi
+Muskular Duchenne. Gangguan ini berkaitan dengan
+kerusakan yang memengaruhi struktur dan fungsi serat
+otot.
+
+</p>
+
+<p>
+
+Pembahasan kelainan juga mencakup Distrofi Miotonik
+sebagai salah satu gangguan yang berkaitan dengan
+fungsi sistem muskular.
+
+</p>
+
+<p>
+
+Selain gangguan yang memengaruhi jaringan otot secara
+langsung, terdapat pula Myasthenia Gravis yang
+berkaitan dengan gangguan pada komunikasi antara saraf
+dan otot. Kondisi tersebut menunjukkan pentingnya
+tautan neuromuskular dalam menghasilkan respons otot
+yang normal.
+
+</p>
+
+<p>
+
+Berbagai kelainan tersebut memperlihatkan bahwa
+fungsi normal sistem muskular membutuhkan hubungan
+yang baik antara struktur otot, sistem saraf, serta
+berbagai proses fisiologis yang mendukung aktivitas
+jaringan.
+
+</p>
+
+</div>
+
+
+<div>
+
+<div class="image-box">
+
+<img
+src="images/gambar-2-9-1-duchenne.png"
+alt="Distrofi Muskular Duchenne">
+
+<p class="caption">
+
+Gambar 2.9.1 — Mekanisme Kerusakan Serat Otot
+pada Distrofi Muskular Duchenne
+
+</p>
+
+</div>
+
+
+<br><br>
+
+
+<div class="image-box">
+
+<img
+src="images/gambar-2-9-2-myasthenia.png"
+alt="Myasthenia Gravis">
+
+<p class="caption">
+
+Gambar 2.9.2 — Perbandingan Neuromuscular Junction
+Normal dan Myasthenia Gravis
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="next-section">
+
+<p class="label">
+BAGIAN SELANJUTNYA
+</p>
+
+<div class="next-card">
+
+<div class="next-number">✦</div>
+
+<div>
+
+<h3>
+BAB III — PENUTUP
+</h3>
+
+<p>
+Mari melihat kesimpulan dari seluruh pembahasan
+tentang sistem muskular manusia.
+</p>
+
+</div>
+
+<button onclick="showPage('bab3')">
+LANJUTKAN →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================
+     BAB III
+===================================== -->
+
+<div id="bab3" class="page">
+
+<section class="alt">
+
+<div class="container">
+
+<p class="label">
+
+BAB III — PENUTUP
+
+</p>
+
+
+<h2>
+
+Kesimpulan
+
+</h2>
+
+
+<div class="content">
+
+<p>
+
+Sistem otot merupakan salah satu sistem penting dalam
+tubuh manusia yang memiliki peranan besar dalam
+menghasilkan gerakan. Aktivitas sistem muskular
+berkaitan dengan organisasi struktur otot, kerja sistem
+saraf, serta ketersediaan energi untuk mendukung
+berbagai proses fisiologis.
+
+</p>
+
+<p>
+
+Organisasi otot dapat dipahami mulai dari tingkat
+makroskopis hingga struktur mikroskopis. Serat otot,
+miofibril, dan sarkomer merupakan bagian yang saling
+berhubungan dalam mendukung kemampuan otot untuk
+menghasilkan kontraksi.
+
+</p>
+
+<p>
+
+Tautan neuromuskular menunjukkan hubungan penting
+antara sistem saraf dan sistem muskular. Rangsangan
+yang diberikan oleh sistem saraf dapat memulai
+rangkaian proses yang menghasilkan respons mekanis
+pada jaringan otot.
+
+</p>
+
+<p>
+
+Kontraksi dan relaksasi merupakan proses fisiologis
+yang berlangsung secara teratur. Pengaturan kalsium,
+aktivitas komponen kontraktil, dan ketersediaan ATP
+memiliki peranan dalam mendukung aktivitas tersebut.
+
+</p>
+
+<p>
+
+Selain memahami fungsi normal sistem muskular,
+pembahasan mengenai sumber energi, respons otot,
+serta berbagai kelainan membantu memberikan gambaran
+yang lebih luas mengenai kompleksitas sistem otot
+manusia.
+
+</p>
+
+</div>
+
+
+<div class="note">
+
+<h3>
+
+✦ Ringkasan Pembelajaran
+
+</h3>
+
+<ul>
+
+<li>Otot memiliki organisasi struktur bertingkat.</li>
+
+<li>Serat otot tersusun atas komponen mikroskopis.</li>
+
+<li>Sarkomer berperan penting dalam kontraksi.</li>
+
+<li>Sistem saraf berkomunikasi dengan otot melalui tautan neuromuskular.</li>
+
+<li>ATP diperlukan untuk mendukung aktivitas otot.</li>
+
+<li>Kalsium berhubungan dengan kontraksi dan relaksasi.</li>
+
+<li>Gangguan pada struktur atau komunikasi dapat memengaruhi fungsi muskular.</li>
+
+</ul>
+
+</div>
+
+
+<div class="bottom-nav">
+
+<button
+class="back"
+onclick="showPage('materi9')">
+
+← KEMBALI KE MATERI
+
+</button>
+
+
+<button
+class="menu"
+onclick="showPage('cover')">
+
+KEMBALI KE COVER →
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+✦ SISTEM OTOT MANUSIA ✦<br>
+
+KELOMPOK 12
+
+</footer>
+
+</div>
+
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+function showPage(pageId) {
+
+    const pages =
+        document.querySelectorAll('.page');
+
+
+    pages.forEach(function(page) {
+
+        page.classList.remove('active');
+
+    });
+
+
+    document
+        .getElementById(pageId)
+        .classList.add('active');
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: 'smooth'
+
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
